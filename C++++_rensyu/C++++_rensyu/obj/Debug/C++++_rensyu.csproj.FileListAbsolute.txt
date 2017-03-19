@@ -1,0 +1,10 @@
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.exe.config
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.exe
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.pdb
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csprojResolveAssemblyReference.cache
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form1.resources
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Properties.Resources.resources
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csproj.GenerateResource.Cache
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.exe
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.pdb
+c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form2.resources
