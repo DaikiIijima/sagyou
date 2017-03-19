@@ -45,8 +45,8 @@ namespace C_____rensyu
             gr = pictureBox1.CreateGraphics();
 
             //画像指定
-            BackgroundImage = new Bitmap("C:\\Users\\Daiki\\Documents\\Visual Studio 2015\\Projects\\C++++_rensyu\\背景.bmp");//背景
-            CharacterImg = new Bitmap("C:\\Users\\Daiki\\Documents\\Visual Studio 2015\\Projects\\C++++_rensyu\\キャラクター.bmp");//キャラ
+            BackgroundImage = new Bitmap("C:\\Users\\kazutaka\\Desktop\\Github 作業用\\.git\\C++++_rensyu\\背景.bmp");//背景
+            CharacterImg = new Bitmap("C:\\Users\\kazutaka\\Desktop\\Github 作業用\\.git\\C++++_rensyu\\キャラクター.bmp");//キャラ
             
             //透明色指定(白を指定)
             ImgAttr = new System.Drawing.Imaging.ImageAttributes();

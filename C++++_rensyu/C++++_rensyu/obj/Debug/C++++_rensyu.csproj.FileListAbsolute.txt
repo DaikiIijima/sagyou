@@ -8,3 +8,13 @@ c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\o
 c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.exe
 c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.pdb
 c:\users\daiki\documents\visual studio 2015\Projects\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form2.resources
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.exe.config
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.exe
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.pdb
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.exe
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.pdb
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csprojResolveAssemblyReference.cache
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form1.resources
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form2.resources
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Properties.Resources.resources
+C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csproj.GenerateResource.Cache
