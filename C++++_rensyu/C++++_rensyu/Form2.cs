@@ -18,85 +18,189 @@ namespace C_____rensyu
         }
 
         //============
-        // ﾒﾝﾊﾞｰ変数
-        // グラフィック用オブジェクト
-        // o-o-o-o-o
-        private Graphics gr;
-        // *** ***
-        // 画像オブジェクト
-        private Image BackgroundImg; // 背景画像
-        private Image CharacterImg; // ｷｬﾗｸﾀｰ画像
-        // 透明色指定用オブジェクト
-        private System.Drawing.Imaging.ImageAttributes ImgAttr;
-        // ｷｬﾗｸﾀｰ位置
-        private Point CharaPosition; // ｷｬﾗｸﾀｰ位置
-        private Point BackPosition; // ｷｬﾗｸﾀｰ位置
-        // ｷｬﾗｸﾀｰx、y軸進行方向
-        private bool XDirection; // ｷｬﾗｸﾀｰx軸進行方向(true:右 / false:左)
-        private bool YDirection; // ｷｬﾗｸﾀｰy軸進行方向(true:下 / false:上)
-
-
-
-        //============
         // ﾌｫｰﾑﾛｰﾄﾞ時用ｲﾍﾞﾝﾄ
         private void Form2_Load(object sender, EventArgs e)
         {
-            // グラフィック用オブジェクトを生成
-            gr = pictureBox1.CreateGraphics();
+            pic.initialize();
 
-            //画像指定
-            BackgroundImage = new Bitmap("C:\\Users\\kazutaka\\Desktop\\Github 作業用\\.git\\C++++_rensyu\\背景.bmp");//背景
-            CharacterImg = new Bitmap("C:\\Users\\kazutaka\\Desktop\\Github 作業用\\.git\\C++++_rensyu\\キャラクター.bmp");//キャラ
-            
-            //透明色指定(白を指定)
-            ImgAttr = new System.Drawing.Imaging.ImageAttributes();
-            ImgAttr.SetColorKey(Color.White, Color.White);//白から白までの範囲
-
-            //キャラクターポジションの初期化
-            CharaPosition = new Point();
-            CharaPosition.X = 0;
-            CharaPosition.Y = 0;
-
-            BackPosition = new Point();
-            BackPosition.X = 0;
-            BackPosition.Y = 0;
-            //タイマー初期化
-            timer1.Enabled = false;//タイマー停止状態で初期化
-            timer1.Interval = 100;//タイマーイベントの間隔
+            //出てくるものの登録
+            initializa();
+           
         }
 
-        //============
-        // ﾌｫｰﾑ終了時用ｲﾍﾞﾝﾄ
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        //ボールの初期化
+        public void initializa()
         {
-            //各種画像用リソースを解放
-            BackgroundImage.Dispose();
-            CharacterImg.Dispose();
+            //キャラクターの登録
+            pic.CharaList.Add(_myBall);
+
+            Random random = new Random();
+            //敵キャラの登録
+            for (int i = 0; i < 2; i++)
+            {
+                //ランダムに動かす
+                int x = random.Next(100, pic.Width - 100);
+                int y = random.Next(100, pic.Height - 100);
+                //方向をランダムにする
+                //?は条件演算子
+                //0のdx,dyが0の場合-1を返して、それ以外の場合は1を返す
+                int dx = random.Next(0, 2) == 0 ? -1 : 1;
+                int dy = random.Next(0, 2) == 0 ? -1 : 1;
+
+                EnemyBall enemyball = (new EnemyBall(x, y, dx, dy));
+
+                //描画用ピクチャーボックスに登録
+                pic.CharaList.Add(enemyball);
+
+                //あたり判定リストに敵を追加
+                _EnemyBallList.Add(enemyball);
+            }
         }
 
-        //============
-        // ﾎﾞﾀﾝｸﾘｯｸ用ｲﾍﾞﾝﾄ
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //タイマースタート
-            timer1.Enabled = true;//タイマー作動開始
-        }
 
-        //============
-        // ﾀｲﾏｰ用ｲﾍﾞﾝﾄ
+        //時機
+        Ball _myBall = new MyBall(0,0,0,0);
+
+        //敵キャラリスト
+        List<Ball> _EnemyBallList = new List<Ball>();
+
+        //タイマーイベント
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //背景画像の描画
-            gr.DrawImage(BackgroundImage, new Rectangle(BackPosition, pictureBox1.Size));
-
-            //キャラクターの描画
-            gr.DrawImage(CharacterImg, new Rectangle(CharaPosition,CharacterImg.Size),0,0,CharacterImg.Width,CharacterImg.Height,GraphicsUnit.Pixel,ImgAttr);
-
-            MovePosition();
+            //描画
+            pic.draw();
+          
         }
 
-        public void MovePosition()
+        Point _oldPoint = Point.Empty;
+
+        //マウスムーブイベント
+        private void pic_MouseMove(object sender, MouseEventArgs e)
         {
+            //マウスカーソルの取得
+            //System.Windows.Forms.Cursor.Position
+        }
+
+        public void move()
+        {
+            //マウスカーソルの中が空だったら位置を入れる
+            if(_oldPoint == Point.Empty)
+            {
+                _oldPoint = System.Windows.Forms.Cursor.Position;
+                return;
+            }
+
+            //移動量の算出
+            int dx = Cursor.Position.X - _oldPoint.X;
+            int dy = Cursor.Position.Y - _oldPoint.Y;
+
+            //位置の移動
+            _myBall._xy.X = _myBall._xy.X + dx;
+            _myBall._xy.Y = _myBall._xy.Y + dy;
+
+            //範囲指定(飛び出さないように)
+            if (_myBall._xy.X < 0) _myBall._xy.X = 0;
+            if (_myBall._xy.Y < 0) _myBall._xy.Y = 0;
+
+            if (_myBall._xy.X + _myBall._size.Width > pic.Width)
+                _myBall._xy.X = pic.Width -  _myBall._size.Width;
+            if (_myBall._xy.Y + _myBall._size.Height > pic.Height)
+                _myBall._xy.Y = pic.Height - _myBall._size.Height;
+
+            //前回の位置として、今回の位置を設定
+            _oldPoint = System.Windows.Forms.Cursor.Position;
+        }
+
+        //スコア
+        int _score = 0;
+
+        //キャラを動かすようのタイマー
+        private void Movetimer_Tick(object sender, EventArgs e)
+        {
+            //時機を動かすよう
+            move();
+
+            //点数の加算
+            _score = _score + 1;
+
+            //点数の表示]
+            label2.Text = _score.ToString();
+        }
+
+        
+        //あたり判定用のタイマー
+        private void timerChec_Tick(object sender, EventArgs e)
+        {
+            
+            Rectangle myrect = new Rectangle(_myBall._xy.X, _myBall._xy.Y, _myBall._size.Width, _myBall._size.Height);
+            
+            foreach (var enemyBall in _EnemyBallList)
+            {
+                /*
+                //時機の左端<= 敵の右端
+                //時機の右端 >= 敵の左端
+                //あたり判定(難しいバージョン)
+                if((_myBall._xy.X <= enemyBall._xy.X + enemyBall._size.Width)&&
+                    (_myBall._xy.X + _myBall._size.Width >= enemyBall._xy.X)&&
+                    (_myBall._xy.Y <= enemyBall._xy.Y + enemyBall._size.Height)&&
+                    (_myBall._xy.Y + _myBall._size.Height >= enemyBall._xy.Y))
+                {
+                    timerChec.Enabled = false;
+                    MessageBox.Show("Hit");
+                    
+                }
+                */
+
+                //あたり判定(簡単バージョン)
+                
+                Rectangle enemyrect = new Rectangle(enemyBall._xy.X +5, enemyBall._xy.Y+5, enemyBall._size.Width - 10, enemyBall._size.Height - 10);
+                if(myrect.IntersectsWith(enemyrect))
+                {   
+                    if (isGameover) return;
+
+                    isGameover = true;
+                    GameOver();
+                    return;
+                }
+                
+            }
+        }
+
+        bool isGameover = false;
+        private void GameOver()
+        {
+            //タイマーの停止
+            timer1.Enabled = false;
+            timerChec.Enabled = false;
+            Movetimer.Enabled = false;
+
+            MessageBox.Show("GAME OVER : "+_score.ToString());
+
+            //ゲームオーバーフラグ戻す
+            isGameover = false;
+
+            //描画用ピクチャーボックスからクリア
+            pic.CharaList.Clear();
+
+            //あたり判定リストからクリア
+            _EnemyBallList.Clear();
+
+            //ゲーム再スタート
+            label2.Text = "0";
+            _score = 0;
+
+            //敵の作成
+            initializa();
+
+            //時機の位置リセット
+            _myBall._xy.X = 0;
+            _myBall._xy.Y = 0;
+
+            _oldPoint = Point.Empty;
+
+            timer1.Enabled = true;
+            timerChec.Enabled = true;
+            Movetimer.Enabled = true;
 
         }
     }
