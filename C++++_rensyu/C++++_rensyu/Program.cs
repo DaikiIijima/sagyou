@@ -19,7 +19,8 @@ namespace C_____rensyu
 
             //新しいウィンドウを作ったらここに記述しないと動かない
             //Application.Run(new Form1());
-            Application.Run(new Form2());
+            //Application.Run(new Form2());
+            Application.Run(new MainForm1());
         }
     }
 }

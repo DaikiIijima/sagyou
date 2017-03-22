@@ -1,42 +1,37 @@
-﻿using Smart.Windows.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Smart.Windows.Mvc;
 
-namespace C_____rensyu
+namespace C_____rensyu.MainForm_File
 {
-    public partial class Form2 : Form
+    //画面を登録
+    [View(Views.Foo)]
+    public partial class FooView : ControlViewBase
     {
-
-        public Form2()
+        public FooView()
         {
             InitializeComponent();
-
         }
 
-
-        //============
-        // ﾌｫｰﾑﾛｰﾄﾞ時用ｲﾍﾞﾝﾄ
-        private void Form2_Load(object sender, EventArgs e)
+        //ボタンクリック時Menu画面へ推移
+        private void button1_Click(object sender, EventArgs e)
         {
-            //マウスカーソルを隠す
-            System.Windows.Forms.Cursor.Hide();
+            Controller.Forward(Views.Menu);
+        }
 
-            pic.initialize();
-
+        private void FooView_Load(object sender, EventArgs e)
+        {
             //出てくるものの登録
             initializa();
 
-            //マウスポジションを時機の上に
-            //usePosi();
-
+            pic.initialize();
         }
 
         //ボールの初期化
@@ -68,37 +63,19 @@ namespace C_____rensyu
             }
         }
 
-        public void MousePosi()
-        {
-            //Form内の座標に変換
-            Point cp = this.PointToScreen(new Point(_myBall._xy.X + _myBall._size.Width / 2, _myBall._xy.Y + (this.Height - pic.Height - _myBall._size.Height / 2)));
-            //マウスポインタの位置を設定する
-            Cursor.Position = cp;
-        }
-
-
         //時機
-        Ball _myBall = new MyBall(0,0,0,0);
+        Ball _myBall = new MyBall(0, 0, 0, 0);
 
         //敵キャラリスト
         List<Ball> _EnemyBallList = new List<Ball>();
 
-        //タイマーイベント
         private void timer1_Tick(object sender, EventArgs e)
         {
             //描画
             pic.draw();
-          
         }
 
         Point _oldPoint = Point.Empty;
-
-        //マウスムーブイベント
-        private void pic_MouseMove(object sender, MouseEventArgs e)
-        {
-            //マウスカーソルの取得
-            //System.Windows.Forms.Cursor.Position
-        }
 
         public void move()
         {
@@ -123,7 +100,7 @@ namespace C_____rensyu
             if (_myBall._xy.Y < 0) _myBall._xy.Y = 0;
 
             if (_myBall._xy.X + _myBall._size.Width > pic.Width)
-                _myBall._xy.X = pic.Width -  _myBall._size.Width;
+                _myBall._xy.X = pic.Width - _myBall._size.Width;
             if (_myBall._xy.Y + _myBall._size.Height > pic.Height)
                 _myBall._xy.Y = pic.Height - _myBall._size.Height;
 
@@ -134,7 +111,6 @@ namespace C_____rensyu
         //スコア
         int _score = 0;
 
-        //キャラを動かすようのタイマー
         private void Movetimer_Tick(object sender, EventArgs e)
         {
             //時機を動かすよう
@@ -147,13 +123,10 @@ namespace C_____rensyu
             label2.Text = _score.ToString();
         }
 
-        
-        //あたり判定用のタイマー
         private void timerChec_Tick(object sender, EventArgs e)
         {
-            
             Rectangle myrect = new Rectangle(_myBall._xy.X, _myBall._xy.Y, _myBall._size.Width, _myBall._size.Height);
-            
+
             foreach (var enemyBall in _EnemyBallList)
             {
                 /*
@@ -172,17 +145,17 @@ namespace C_____rensyu
                 */
 
                 //あたり判定(簡単バージョン)
-                
-                Rectangle enemyrect = new Rectangle(enemyBall._xy.X +5, enemyBall._xy.Y+5, enemyBall._size.Width - 10, enemyBall._size.Height - 10);
-                if(myrect.IntersectsWith(enemyrect))
-                {   
+
+                Rectangle enemyrect = new Rectangle(enemyBall._xy.X + 5, enemyBall._xy.Y + 5, enemyBall._size.Width - 10, enemyBall._size.Height - 10);
+                if (myrect.IntersectsWith(enemyrect))
+                {
                     if (isGameover) return;
 
                     isGameover = true;
                     GameOver();
                     return;
                 }
-                
+
             }
         }
 
@@ -197,7 +170,7 @@ namespace C_____rensyu
             //マウスカーソルの表示
             System.Windows.Forms.Cursor.Show();
 
-            MessageBox.Show("GAME OVER : "+_score.ToString());
+            MessageBox.Show("GAME OVER : " + _score.ToString());
 
             //ゲームオーバーフラグ戻す
             isGameover = false;
@@ -225,8 +198,9 @@ namespace C_____rensyu
             timerChec.Enabled = true;
             Movetimer.Enabled = true;
 
-           
+
 
         }
     }
 }
+

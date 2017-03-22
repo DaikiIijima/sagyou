@@ -18,3 +18,18 @@ C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\De
 C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form2.resources
 C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Properties.Resources.resources
 C:\Users\kazutaka\Desktop\Github 作業用\.git\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csproj.GenerateResource.Cache
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.exe.config
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.exe
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.pdb
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.exe
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\bin\Debug\C++++_rensyu.pdb
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csprojResolveAssemblyReference.cache
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form1.resources
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Properties.Resources.resources
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C++++_rensyu.csproj.GenerateResource.Cache
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.Form2.resources
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\bin\Debug\Smart.Windows.Mvc.dll
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\bin\Debug\Smart.Windows.Mvc.pdb
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.MainForm.MenView.resources
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.MainForm1.resources
+C:\Users\Daiki\Documents\sagyou\C++++_rensyu\C++++_rensyu\obj\Debug\C_____rensyu.MainForm_File.FooView.resources
