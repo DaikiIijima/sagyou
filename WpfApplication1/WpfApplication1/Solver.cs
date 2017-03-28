@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C_____rensyu
+namespace WpfApplication1
 {
-    public enum Views
+    class Solver
     {
-        Menu,
-        Foo,
-        Bar,
-        Osero,
     }
 }

@@ -22,7 +22,7 @@ namespace C_____rensyu.MainForm
             InitializeComponent();
         }
 
-        //Foo画面へ推移
+        //たまよけへ推移
         private void button1_Click(object sender, EventArgs e)
         {
             Controller.Forward(Views.Foo);
@@ -38,6 +38,12 @@ namespace C_____rensyu.MainForm
         private void button3_Click(object sender, EventArgs e)
         {
             Controller.Exit();
+        }
+
+        //オセロ画面へ
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Controller.Forward(Views.Osero);
         }
     }
 }
