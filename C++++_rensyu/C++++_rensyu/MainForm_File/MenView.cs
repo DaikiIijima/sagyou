@@ -43,7 +43,7 @@ namespace C_____rensyu.MainForm
         //オセロ画面へ
         private void button4_Click(object sender, EventArgs e)
         {
-            Controller.Forward(Views.Osero);
+            Controller.Forward(Views.Game_main);
         }
     }
 }

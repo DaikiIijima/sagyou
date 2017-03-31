@@ -11,6 +11,6 @@ namespace C_____rensyu
         Menu,
         Foo,
         Bar,
-        Osero,
+        Game_main,
     }
 }

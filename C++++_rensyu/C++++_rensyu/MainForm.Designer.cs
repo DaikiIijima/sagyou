@@ -33,16 +33,16 @@
             // 
             // ViewPanel
             // 
-            this.ViewPanel.Location = new System.Drawing.Point(0, 4);
+            this.ViewPanel.Location = new System.Drawing.Point(2, 0);
             this.ViewPanel.Name = "ViewPanel";
-            this.ViewPanel.Size = new System.Drawing.Size(401, 366);
+            this.ViewPanel.Size = new System.Drawing.Size(620, 412);
             this.ViewPanel.TabIndex = 0;
             // 
             // MainForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 371);
+            this.ClientSize = new System.Drawing.Size(624, 411);
             this.Controls.Add(this.ViewPanel);
             this.Name = "MainForm1";
             this.Text = "MainForm";
